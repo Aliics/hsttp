@@ -1,8 +1,13 @@
-{-# OverloadedStrings #-}
+module Hsttp.Response
+  ( Response (..),
+    marshalResponse,
+    readResponseHead,
+  )
+where
 
-module Hsttp.Response (Response (..), marshalResponse) where
-
+import Data.Bifunctor (bimap)
 import Data.Extra.List
+import Hsttp.Constants (chunkSize, crlf, httpVersion)
 import Hsttp.Header
 import Hsttp.StatusCode
 import Network.Simple.TCP
@@ -18,19 +23,19 @@ marshalResponse r = do
   body <- responseBody r
   let sc = show (responseStatusCode r)
   let hs = unwords $ mkHeaderString $ responseHeaders r
-  pure $ "HTTP/1.1 " ++ sc ++ "\r\n" ++ hs ++ "\r\n" ++ body
+  pure $ httpVersion ++ " " ++ sc ++ crlf ++ hs ++ crlf ++ body
 
---recvResponse :: Socket -> IO Response
---recvResponse s = do
---  (head, bodyOverflow) <- recv s 1024
---  pure Response {}
---
 readResponseHead :: Socket -> IO (String, String)
 readResponseHead s = do
-  maybeBs <- recv s 1024
-  case maybeBs of
-    (Just bs) ->
-      if show bs `contains` "\r\n"
-        then pure ("", "")
-        else pure ("", "")
-    Nothing -> pure ("", "")
+  maybeChunk <- recv s chunkSize
+  let r@(h, b) = readHeadAndSplit (show <$> maybeChunk)
+  if b /= ""
+    then pure r
+    else fmap (bimap (h ++) (b ++)) (readResponseHead s)
+
+readHeadAndSplit :: Maybe String -> (String, String)
+readHeadAndSplit (Just chunk) =
+  case indexOf chunk crlf of
+    (Just n) -> splitAt n chunk
+    Nothing -> (show chunk, "")
+readHeadAndSplit Nothing = ("", "")

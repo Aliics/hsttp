@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57e743f7-cc66-4614-9595-0459c8d2f27f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Data/Extra/List.hs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Data/Extra/ListSpec.hs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Hsttp/Constants.hs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hsttp.cabal" beforeDir="false" afterPath="$PROJECT_DIR$/hsttp.cabal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/package.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Hsttp/Header.hs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hsttp/Header.hs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Hsttp/Request.hs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hsttp/Request.hs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Hsttp/Response.hs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hsttp/Response.hs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Haskell Module" />
         <option value="Haskell Test Module" />
+        <option value="Haskell Module" />
       </list>
     </option>
   </component>
@@ -44,22 +44,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Run Tests" type="HaskellStackConfigurationType" factoryName="Haskell Stack Tester" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="hsttp" />
@@ -86,7 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1701069043941</updated>
       <workItem from="1701069045790" duration="426000" />
-      <workItem from="1701069478809" duration="3333000" />
+      <workItem from="1701069478809" duration="4892000" />
     </task>
     <servers />
   </component>

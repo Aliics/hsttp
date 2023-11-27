@@ -47,7 +47,7 @@ test-suite hsttp-test
   other-modules:
       Hsttp.RequestSpec
       Hsttp.ResponseSpec
-      Test.Table
+      Test.TableTest
       Paths_hsttp
   autogen-modules:
       Paths_hsttp

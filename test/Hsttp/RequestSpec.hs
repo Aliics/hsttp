@@ -3,7 +3,7 @@ module Hsttp.RequestSpec (spec) where
 import qualified Hsttp.Method as Method
 import Hsttp.Request
 import Test.Hspec
-import Test.Table
+import Test.TableTest
 
 spec :: Spec
 spec =

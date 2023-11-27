@@ -1,4 +1,4 @@
-module Test.Table(TableTest (..), describeTable) where
+module Test.TableTest(TableTest (..), describeTable) where
 
 import Test.Hspec
 import Data.Foldable (traverse_)

@@ -4,7 +4,7 @@ module Hsttp.ResponseSpec (spec) where
 
 import Hsttp.Response
 import Hsttp.StatusCode
-import Test.Table
+import Test.TableTest
 import Test.Hspec
 
 spec :: Spec

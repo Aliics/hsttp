@@ -4,8 +4,8 @@ module Hsttp.ResponseSpec (spec) where
 
 import Hsttp.Response
 import Hsttp.StatusCode
+import Test.Table
 import Test.Hspec
-import Hsttp.Tests
 
 spec :: Spec
 spec =
@@ -31,5 +31,15 @@ spec =
                 responseBody = pure ""
               },
           want = "HTTP/1.1 400 Bad Request\r\nContent-Type: plain/text\r\n\r\n"
+        },
+      TableTest
+        { name = "should create 500 internal server error with body",
+          given =
+            Response
+              { responseStatusCode = InternalServerError,
+                responseHeaders = [],
+                responseBody = pure "oopsie"
+              },
+          want = "HTTP/1.1 500 Internal Server Error\r\n\r\noopsie"
         }
     ]

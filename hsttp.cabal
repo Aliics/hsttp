@@ -25,6 +25,7 @@ source-repository head
 
 library
   exposed-modules:
+      Hsttp.Header
       Hsttp.Method
       Hsttp.Request
       Hsttp.Response
@@ -44,7 +45,9 @@ test-suite hsttp-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      Hsttp.RequestSpec
       Hsttp.ResponseSpec
+      Test.Table
       Paths_hsttp
   autogen-modules:
       Paths_hsttp

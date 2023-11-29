@@ -13,4 +13,3 @@ instance Show Method where
   show Post = "POST"
   show Delete = "DELETE"
   show Options = "OPTIONS"
-  

@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57e743f7-cc66-4614-9595-0459c8d2f27f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Hsttp/Constants.hs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsttp.cabal" beforeDir="false" afterPath="$PROJECT_DIR$/hsttp.cabal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Hsttp/Header.hs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hsttp/Header.hs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hsttp/Request.hs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hsttp/Request.hs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Hsttp/Method.hs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hsttp/Method.hs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Hsttp/Response.hs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hsttp/Response.hs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Hsttp/StatusCode.hs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hsttp/StatusCode.hs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1701069043941</updated>
       <workItem from="1701069045790" duration="426000" />
-      <workItem from="1701069478809" duration="4892000" />
+      <workItem from="1701069478809" duration="9544000" />
     </task>
     <servers />
   </component>

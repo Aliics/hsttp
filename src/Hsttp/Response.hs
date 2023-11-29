@@ -1,7 +1,7 @@
 module Hsttp.Response
   ( Response (..),
     marshalResponse,
-    readResponseHead,
+    readResponseFromSocket,
   )
 where
 
@@ -22,8 +22,25 @@ marshalResponse :: Response -> IO String
 marshalResponse r = do
   body <- responseBody r
   let sc = show (responseStatusCode r)
-  let hs = unwords $ mkHeaderString $ responseHeaders r
+  let hs = unwords . mkHeaderString $ responseHeaders r
   pure $ httpVersion ++ " " ++ sc ++ crlf ++ hs ++ crlf ++ body
+
+readResponseFromSocket :: Socket -> IO Response
+readResponseFromSocket s = do
+  (respHead, leadBody) <- readResponseHead s
+  let ls = lines respHead
+  let sc = (read . head . tail . words $ head ls) :: StatusCode
+  let hs = readHeaderLines $ tail ls
+  let b =
+        case headerValue "Content-Length" hs of
+          (Just cl) -> (leadBody ++) <$> readBody s (read cl - length leadBody)
+          Nothing -> pure ""
+  pure
+    Response
+      { responseStatusCode = sc,
+        responseHeaders = hs,
+        responseBody = b
+      }
 
 readResponseHead :: Socket -> IO (String, String)
 readResponseHead s = do
@@ -39,3 +56,11 @@ readHeadAndSplit (Just chunk) =
     (Just n) -> splitAt n chunk
     Nothing -> (show chunk, "")
 readHeadAndSplit Nothing = ("", "")
+
+readBody :: Socket -> Int -> IO String
+readBody _ 0 = pure ""
+readBody s n = do
+  (Just chunk) <- recv s (min n chunkSize)
+  let chunkStr = show chunk
+  bodyTail <- readBody s (n - length chunkStr)
+  pure $ chunkStr ++ bodyTail
